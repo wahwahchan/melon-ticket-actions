@@ -8,10 +8,14 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Check Tickets
-        uses: mooyoul/melon-ticket-actions@v1.1.0
+        uses: wahwah/melon-ticket-actions
         with:
-          product-id: 204755
-          schedule-id: 100001
+          product-id: 211212
+          schedule-id: 10001
           seat-id: 1_0
-          slack-incoming-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
-          message: '<@U4CF18RKL> 티켓사세요'
+          name: Send Telegram Notification
+          uses: MelonKRBot/telegram-action@master
+         with:
+         to: ${{secrets.MelonKRBot}}
+         token: ${{secrets.7855546908:AAHMBBK-eDad_sB36m5cetOjcei0Iu37408}}
+        message: 'Tickets are available! Check now: https://ticket.melon.com #ticket'
